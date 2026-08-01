@@ -162,20 +162,20 @@ export default function CosmicScrollExperience() {
           {/* 0 — opening */}
           <div
             ref={(el) => setOverlayRef(el, 0)}
-            className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 px-6"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 px-8"
           >
-            <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-white/50 mb-8">
+            <p className="font-mono text-xs sm:text-sm tracking-[0.4em] uppercase text-white/50 mb-10">
               Scroll to explore
             </p>
-            <h1 className="font-display text-5xl sm:text-7xl md:text-[7rem] font-light tracking-tight text-white leading-[0.92]">
+            <h1 className="font-display text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-bold tracking-tight text-white leading-[0.88]">
               Cosmos{' '}
               <span className="italic text-amber-400">IP</span>
             </h1>
-            <p className="mt-6 font-body text-base sm:text-lg text-white/60 max-w-md">
+            <p className="mt-8 font-body text-lg sm:text-xl md:text-2xl text-white/60 max-w-2xl">
               Where innovation meets protection
             </p>
-            <div className="mt-12 animate-float">
-              <svg className="w-5 h-5 text-white/30" viewBox="0 0 20 20" fill="currentColor">
+            <div className="mt-14 animate-float">
+              <svg className="w-6 h-6 text-white/30" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </div>
@@ -184,12 +184,12 @@ export default function CosmicScrollExperience() {
           {/* 1 — AI & Software */}
           <div
             ref={(el) => setOverlayRef(el, 1)}
-            className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 px-6"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 px-8"
           >
-            <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-amber-400/80 mb-5">
+            <p className="font-mono text-xs sm:text-sm tracking-[0.4em] uppercase text-amber-400/80 mb-6">
               AI &amp; Software Patents
             </p>
-            <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-light text-white max-w-3xl leading-tight">
+            <h2 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white max-w-5xl leading-[0.92]">
               Protecting the ideas
               <br />
               that shape <span className="italic text-amber-400">tomorrow</span>
@@ -199,12 +199,12 @@ export default function CosmicScrollExperience() {
           {/* 2 — Prosecution */}
           <div
             ref={(el) => setOverlayRef(el, 2)}
-            className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 px-6"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 px-8"
           >
-            <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-white/50 mb-5">
+            <p className="font-mono text-xs sm:text-sm tracking-[0.4em] uppercase text-white/50 mb-6">
               Patent Prosecution
             </p>
-            <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-light text-white max-w-3xl leading-tight">
+            <h2 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white max-w-5xl leading-[0.92]">
               Precision-crafted
               <br />
               <span className="italic text-amber-400">protection</span>
@@ -214,19 +214,19 @@ export default function CosmicScrollExperience() {
           {/* 3 — CTA */}
           <div
             ref={(el) => setOverlayRef(el, 3)}
-            className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 px-6"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 px-8"
           >
-            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-light tracking-tight text-white leading-[0.95]">
+            <h2 className="font-display text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-bold tracking-tight text-white leading-[0.88]">
               Cosmos <span className="italic text-amber-400">IP</span>
             </h2>
-            <div className="mt-6 w-14 h-px bg-amber-400/40" />
-            <p className="mt-6 font-body text-sm sm:text-base text-white/60 max-w-lg leading-relaxed">
+            <div className="mt-8 w-20 h-px bg-amber-400/40" />
+            <p className="mt-8 font-body text-lg sm:text-xl md:text-2xl text-white/60 max-w-2xl leading-relaxed">
               Exceptional patent drafting and prosecution services
               for AI, software, and computer-related inventions
             </p>
             <a
               href="#services"
-              className="mt-9 inline-flex items-center gap-2 px-8 py-3.5 bg-amber-600 text-white text-xs font-mono tracking-[0.2em] uppercase hover:bg-amber-500 transition-colors pointer-events-auto"
+              className="mt-12 inline-flex items-center gap-3 px-12 py-5 bg-amber-600 text-white text-sm sm:text-base font-mono tracking-[0.2em] uppercase hover:bg-amber-500 transition-colors pointer-events-auto"
             >
               Explore Our Services
             </a>
