@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect, useCallback, useState } from 'react'
+import { useRef, useEffect, useCallback } from 'react'
 
 const TOTAL_FRAMES = 150
 const FRAME_PATH = '/frames/hero/frame_'
@@ -17,7 +17,6 @@ export default function CosmicScrollExperience() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const overlayRefs = useRef<(HTMLDivElement | null)[]>([])
   const framesRef = useRef<HTMLImageElement[]>([])
-  const [loaded, setLoaded] = useState(false)
 
   const setOverlayRef = useCallback(
     (el: HTMLDivElement | null, i: number) => {
@@ -30,15 +29,12 @@ export default function CosmicScrollExperience() {
     const canvas = canvasRef.current!
     const container = containerRef.current!
     const ctx = canvas.getContext('2d')!
-    let loadedCount = 0
 
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       const img = new Image()
       img.src = `${FRAME_PATH}${String(i).padStart(4, '0')}.jpg`
       img.onload = () => {
-        loadedCount++
-        if (loadedCount === TOTAL_FRAMES) {
-          setLoaded(true)
+        if (i === 1) {
           resize()
           render(getProgress())
         }
@@ -144,25 +140,15 @@ export default function CosmicScrollExperience() {
 
   return (
     <div ref={containerRef} className="relative" style={{ height: '500vh' }}>
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="sticky top-0 h-screen overflow-hidden bg-slate-900">
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-
-        {!loaded && (
-          <div className="absolute inset-0 bg-slate-900 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-8 h-8 border-2 border-amber-600/30 border-t-amber-600 rounded-full animate-spin mx-auto mb-4" />
-              <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-slate-400">
-                Loading experience
-              </p>
-            </div>
-          </div>
-        )}
 
         <div className="absolute inset-0 pointer-events-none">
           {/* 0 — opening */}
           <div
             ref={(el) => setOverlayRef(el, 0)}
-            className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 px-8"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center px-8"
+            style={{ opacity: 1 }}
           >
             <p className="font-mono text-xs sm:text-sm tracking-[0.4em] uppercase text-white/50 mb-10">
               Scroll to explore
